@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.xml.ws.RequestWrapper;
 import java.security.Principal;
 
 @RestController
@@ -30,6 +33,11 @@ public class UserController {
 
     @GetMapping
     public RedirectView redirectToIndex() {
+        return new RedirectView("/index.html");
+    }
+
+    @GetMapping("/login")
+    public RedirectView redirectToIndex1() {
         return new RedirectView("/index.html");
     }
 
@@ -80,7 +88,6 @@ public class UserController {
     @PostMapping(value = "/user/logout")
     public ResponseMessage logout(Principal user) {
         try {
-            //добавить логаут норм
             return new ResponseMessage(200, "User logout");
         } catch (Exception e) {
             e.printStackTrace();

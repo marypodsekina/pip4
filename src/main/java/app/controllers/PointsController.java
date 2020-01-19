@@ -29,6 +29,7 @@ public class PointsController {
 
     @PostMapping("/add")
     public ResponseMessage addPoint(@RequestBody Point point){
+        point.setR(Math.abs(point.getR()));
         if((point.getR() == null) || (point.getX() == null) || (point.getY() == null) ||
                 (point.getY().isNaN()) ||(point.getX().isNaN()) || (point.getR().isNaN()))
             return new ResponseMessage(400, "x/y/r is null");

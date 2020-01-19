@@ -27,7 +27,7 @@ public class PointsService {
         double x = p.getX();
         double y = p.getY();
         double r = p.getR();
-        return (x <= 0 && y >= 0 && y <= r && Math.abs(x) < r / 2) || (x >= 0 && y >= 0 && x * x + y * y <= r * r / 4) || (x >= 0 && y <= 0 && x <= y + r / 2);
+        return (x <= 0 && y >= 0 && y <= r && Math.abs(x) <= r ) || (x <= 0 && y <= 0 && x * x + y * y <= r * r / 4) || (x >= 0 && y <= 0 && x <= y + r / 2);
     }
 
     public void updatePoint(Point point){

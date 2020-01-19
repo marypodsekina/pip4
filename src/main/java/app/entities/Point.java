@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="POINTS")
+@Table(name="POINTZ")
 public class Point {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
